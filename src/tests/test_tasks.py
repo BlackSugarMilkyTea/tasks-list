@@ -83,7 +83,6 @@ class TestTasks:
     def test_put_a_task(self, client, mock_session):
         with patch('routes.tasks.db', MagicMock(session=mock_session)):
             resp = client.put('/tasks/1', json={
-                'id': 1,
                 'name': 'pre-task-1-ex',
                 'status': 1,
             })
@@ -95,7 +94,10 @@ class TestTasks:
                 'name': 'pre-task-1-ex',
                 'status': 1,
             }
-            resp = client.put('/tasks/3')
+            resp = client.put('/tasks/3', json={
+                'name': 'pre-task-3-ex',
+                'status': 1,
+            })
             assert resp.status_code == 404
             assert resp.headers['Content-Type'] == 'application/json'
             assert resp.json == {
