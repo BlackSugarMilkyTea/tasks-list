@@ -1,0 +1,16 @@
+services:
+  tasklist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    ports:
+      - "58080:8080"
+
+  tasklist-unit-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: unit-test
+    ports:
+      - "58080:8080"
