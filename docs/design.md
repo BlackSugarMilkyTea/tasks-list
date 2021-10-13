@@ -102,8 +102,7 @@ Request and response data are shown below the following table.
 ```json
 {
     "name": "買早餐",
-    "status": 1,
-    "id": 1
+    "status": 1
 }
 ```
 - Put_Response
