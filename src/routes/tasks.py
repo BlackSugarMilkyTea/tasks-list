@@ -16,7 +16,7 @@ class Tasks(Resource):
 
     @api.expect(api.model('put_a_task', {
         'name': fields.String,
-    }))
+    }, strict=True))
     def post(self):
         try:
             task: Task = Task(
@@ -49,8 +49,8 @@ class ATask(Resource):
 
     @api.expect(api.model('put_a_task', {
         'name': fields.String,
-        'status': fields.Boolean,
-    }))
+        'status': fields.Integer,
+    }, strict=True))
     def put(self, id):
         try:
             task: Task = db.session.query(Task).filter_by(id=id).one()
