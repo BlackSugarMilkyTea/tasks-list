@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
       target: server
     ports:
-      - "127.0.0.1:58080:8080"
+      - "58080:58080"
 
   tasklist-unit-test:
     build:
@@ -13,4 +13,4 @@ services:
       dockerfile: Dockerfile
       target: unit-test
     ports:
-      - "127.0.0.1:58080:8080"
+      - "58080:58080"
