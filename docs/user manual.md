@@ -18,7 +18,7 @@
     cd /path/to/src
     pipenv run python start.py
     ```
-2. server runs on 127.0.0.1:58080
+2. server runs on http://127.0.0.1:58080
 
 ### On docker
 1. execute following commands
@@ -26,7 +26,7 @@
     cd /path/to/src
     docker-compose up --build tasklist
     ```
-2. server runs on 127.0.0.1:58080
+2. server runs on http://127.0.0.1:58080
 
 ## Run Test
 
